@@ -1,0 +1,25 @@
+{
+  "name": "discord-bot-for-everything",
+  "version": "1.0.0",
+  "description": "Discord bot for everything",
+  "main": "run.js",
+  "dependencies": {
+    "coinkey": "^3.0.0",
+    "discord.js": "^12.5.3",
+    "latest-tweets": "^1.0.4",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "string-math": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Bitcoin",
+    "discord"
+  ],
+  "author": "Michal2SAB",
+  "license": "ISC"
+}
