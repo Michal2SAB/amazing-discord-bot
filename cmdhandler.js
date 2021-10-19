@@ -6,13 +6,14 @@ const luck = require('./commands/luck.js');
 const calc = require('./commands/calc.js');
 const bnews = require('./commands/bnews.js');
 const ask = require('./commands/ask.js');
-const mw = require('./commands/mweather.js');
+const mweather = require('./commands/mweather.js');
 const apod = require('./commands/apod.js');
+const ytags = require('./commands/ytags.js');
 
 const config = require('./config.json');
 const prefix = config.prefix;
 
-const cmds = { btc, eth, luck, calc, bnews, ask, mw, apod}
+const cmds = { btc, eth, luck, calc, bnews, ask, mweather, apod, ytags}
 
 module.exports = async function (msg) {
     if (msg.author.bot) return;
