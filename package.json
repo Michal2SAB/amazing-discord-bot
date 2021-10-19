@@ -1,5 +1,5 @@
 {
-  "name": "discord-bot-for-everything",
+  "name": "amazing-discord-bot",
   "version": "1.0.0",
   "description": "Discord bot for everything",
   "main": "run.js",
@@ -10,7 +10,8 @@
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
-    "string-math": "^1.2.2"
+    "string-math": "^1.2.2",
+    "youtube-tags": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
