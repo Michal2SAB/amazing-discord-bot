@@ -18,11 +18,19 @@ const cmds = { btc, eth, luck, calc, bnews, ask, mweather, apod, ytags}
 module.exports = async function (msg) {
     if (msg.author.bot) return;
     if (msg.content.startsWith(prefix)) {
-        const [cmd, ...args] = msg.content
-            .trim()
-            .substring(prefix.length)
-            .split(/\s+/);
+        try {
+            const [cmd, ...args] = msg.content
+                .trim()
+                .substring(prefix.length)
+                .split(/\s+/);
         
-        cmds[cmd](msg, args, cmd);
+            cmds[cmd](msg, args, cmd);
+        } catch (err) {
+            if (err.name == 'TypeError') {
+                msg.reply(msg.content.split(' ')[0] + " is not a command.");
+            } else {
+                console.log(err);
+            }
+        }
     }
 };
