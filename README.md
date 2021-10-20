@@ -37,20 +37,27 @@ An amazing discord bot for many different things.
 </details>
 
 <details>
-  <summary>6. !luck</summary>
+   <summary>6. !soon</summary>
+   
+   - Work in progress and will be coming soon. It's for predicting bitcoin price in period of time (max 1 in week) and earning win or loss score for it when the prediction date comes.
+   - Usage: !soon [btc price] [month day]
+</details>
+
+<details>
+  <summary>7. !luck</summary>
   
   - Generate 10 random bitcoin wallets and their matching private keys & display their balances.
 </details>
 
 <details>
-  <summary>7. !ask</summary>
+  <summary>8. !ask</summary>
   
   - Ask the bot about anything and get a random yes or no.
   - Usage: /ask [question]
 </details>
 
 <details>
-  <summary>8. !calc</summary>
+  <summary>9. !calc</summary>
   
   - Bonus command. Easily calculate stuff with just one command, using 'simplecalculator' module.
   - Command example: !calc 2 + 2
