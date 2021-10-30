@@ -8,6 +8,7 @@
     "discord.js": "^12.5.3",
     "latest-tweets": "^1.0.4",
     "node-fetch": "^2.6.1",
+    "puppeteer": "^10.4.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "string-math": "^1.2.2",
