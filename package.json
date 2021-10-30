@@ -2,7 +2,7 @@
   "name": "amazing-discord-bot",
   "version": "1.0.0",
   "description": "Discord bot for everything",
-  "main": "run.js",
+  "main": "start.js",
   "dependencies": {
     "coinkey": "^3.0.0",
     "discord.js": "^12.5.3",
