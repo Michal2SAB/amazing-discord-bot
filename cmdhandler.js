@@ -10,13 +10,14 @@ const mweather = require('./commands/mweather.js');
 const mars = require('./commands/mars.js');
 const marsnews = require('./commands/marsnews.js');
 const apod = require('./commands/apod.js');
+const telescope = require('./commands/telescope.js');
 const ytags = require('./commands/ytags.js');
 const soon = require('./commands/soon.js');
 
 const config = require('./config.json');
 const prefix = config.prefix;
 
-const cmds = { btc, eth, luck, calc, bnews, ask, mweather, mars, marsnews, apod, ytags, soon}
+const cmds = { btc, eth, luck, calc, bnews, ask, mweather, mars, marsnews, apod, telescope, ytags, soon}
 
 module.exports = async function (msg) {
     if (msg.author.bot) return;
