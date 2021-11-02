@@ -14,12 +14,12 @@ module.exports = async function (msg) {
 
         await page.goto(url, { waitUntil: 'networkidle0' });
 
-        const recentNews = ".ssdStoryLeadPanel";
+        const recentNews = ".ssdStoryLeadPanel > ul > li";
 
-        const date = await page.$eval(recentNews + " > ul > li .date", li => li.innerText);
-        const title = await page.$eval(recentNews + " > ul > li > h3 > a", a => a.innerText);
-        const link = await page.$eval(recentNews + "> ul > li > h3 > a", a => a.href);
-        const content = await page.$eval(recentNews + " > ul > li > p", p => p.innerText);
+        const date = await page.$eval(recentNews + " .date", li => li.innerText);
+        const title = await page.$eval(recentNews + " > h3 > a", a => a.innerText);
+        const link = await page.$eval(recentNews + " > h3 > a", a => a.href);
+        const content = await page.$eval(recentNews + " > p", p => p.innerText);
         const nasaLogo = "https://github.com/Michal2SAB/DISCORD-NASA-BOT/blob/main/nlogo.png?raw=true";
 
         const Discord = require('discord.js');
