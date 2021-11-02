@@ -36,40 +36,46 @@ An amazing discord bot for many different things.
 </details>
 
 <details>
-  <summary>6. !bnews</summary>
+  <summary>6. !telescope</summary>
+  
+  - Get the latest news about the new James Webb telescope about to launch to space.
+</details>
+
+<details>
+  <summary>7. !bnews</summary>
    
    - Get the newest news/posts from bitcoin subreddit.
 </details>
 
 <details>
-  <summary>7. !btc and !eth</summary>
+  <summary>8. !btc and !eth</summary>
    
    - Convert bitcoin or ethereum value to USD dollars with bitcoin's or ethereum's real time price.
    - Usage: !btc [value] or !eth [value]
 </details>
 
 <details>
-   <summary>8. !soon</summary>
+   <summary>9. !soon</summary>
    
    - Work in progress and will be coming soon. It's for predicting bitcoin price in period of time (max 1 in week) and earning win or loss score for it when the prediction date comes.
    - Usage: !soon [btc price] [month day]
 </details>
 
 <details>
-  <summary>9. !luck</summary>
+  <summary>10. !luck</summary>
   
   - Generate 10 random bitcoin wallets and their matching private keys & display their balances.
 </details>
 
 <details>
-  <summary>10. !ask</summary>
+  <summary>11. !ask</summary>
   
   - Ask the bot about anything and get a random yes or no.
   - Usage: /ask [question]
 </details>
 
 <details>
-  <summary>11. !calc</summary>
+  <summary>12. !calc</summary>
   
   - Bonus command. Easily calculate stuff with just one command, using 'simplecalculator' module.
   - Command example: !calc 2 + 2
