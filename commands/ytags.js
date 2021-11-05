@@ -3,7 +3,14 @@
 const ytags = require('youtube-tags');
 
 module.exports = async function (msg, link) {
-    const code = link[0].split("?v=")[1];
+    var code;
+    
+    if(link.includes("?v=")) {
+        code = link[0].split("?v=")[1];
+    } else {
+        code = link[0].split("e/")[1];
+    }
+    
     const tags = await ytags.getYoutubeTags(code);
 
     const Discord = require('discord.js');
