@@ -3,6 +3,7 @@
 const btc = require('./commands/cryptocurrency.js');
 const eth = btc;
 const luck = require('./commands/luck.js');
+const ethluck = require('./commands/ethluck.js');
 const calc = require('./commands/calc.js');
 const bnews = require('./commands/bnews.js');
 const ask = require('./commands/ask.js');
@@ -17,7 +18,7 @@ const soon = require('./commands/soon.js');
 const config = require('./config.json');
 const prefix = config.prefix;
 
-const cmds = { btc, eth, luck, calc, bnews, ask, mweather, mars, marsnews, apod, telescope, ytags, soon}
+const cmds = { btc, eth, luck, ethluck, calc, bnews, ask, mweather, mars, marsnews, apod, telescope, ytags, soon}
 
 module.exports = async function (msg) {
     if (msg.author.bot) return;
