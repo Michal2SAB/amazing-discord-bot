@@ -86,3 +86,10 @@ An amazing discord bot for many different things.
   - Bonus command. Easily calculate stuff with just one command, using 'simplecalculator' module.
   - Command example: !calc 2 + 2
 </details>
+
+<details>
+  <summary>14. !colvert</summary>
+  
+  - Bonus command. Easily convert RGB color to HEX color or HEX color to RGB color.
+  - Command example: !colvert 255000000 or !colvert #FF0000
+</details>
