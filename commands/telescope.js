@@ -7,7 +7,7 @@ module.exports = async function (msg) {
     try {
         msg.channel.send("Loading NASA's content..")
         const browser = await puppeteer.launch({
-            args: ["--proxy-server='direct://'", '--proxy-bypass-list=*'],
+            args: ["--proxy-server='direct://'", '--proxy-bypass-list=*', '--no-sandbox', '--disable-setuid-sandbox'],
             headless: true
         });
         const [page] = await browser.pages();
