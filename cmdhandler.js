@@ -14,11 +14,12 @@ const apod = require('./commands/apod.js');
 const telescope = require('./commands/telescope.js');
 const ytags = require('./commands/ytags.js');
 const soon = require('./commands/soon.js');
+const colvert = require('./commands/colvert.js');
 
 const config = require('./config.json');
 const prefix = config.prefix;
 
-const cmds = { btc, eth, luck, ethluck, calc, bnews, ask, mweather, mars, marsnews, apod, telescope, ytags, soon}
+const cmds = { btc, eth, luck, ethluck, calc, bnews, ask, mweather, mars, marsnews, apod, telescope, ytags, soon, colvert}
 
 module.exports = async function (msg) {
     if (msg.author.bot) return;
