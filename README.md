@@ -68,14 +68,20 @@ An amazing discord bot for many different things.
 </details>
 
 <details>
-  <summary>11. !ask</summary>
+  <summary>11. !ethluck</summary>
+  
+  - Generate 10 random ethereum wallets and their matching private keys & display their balances.
+</details>
+
+<details>
+  <summary>12. !ask</summary>
   
   - Ask the bot about anything and get a random yes or no.
   - Usage: /ask [question]
 </details>
 
 <details>
-  <summary>12. !calc</summary>
+  <summary>13. !calc</summary>
   
   - Bonus command. Easily calculate stuff with just one command, using 'simplecalculator' module.
   - Command example: !calc 2 + 2
