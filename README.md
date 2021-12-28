@@ -90,6 +90,13 @@ An amazing discord bot for many different things.
 <details>
   <summary>14. !colvert</summary>
   
-  - Bonus command. Easily convert RGB color to HEX color or HEX color to RGB color.
+  - Easily convert RGB color to HEX color or HEX color to RGB color.
   - Command example: !colvert 255000000 or !colvert #FF0000
+</details>
+
+<details>
+  <summary>15. !remove</summary>
+  
+  - Easily remove background almost perfectly from almost any image out there.
+  - Command example: !remove https://www.somesite/with/someimage.png
 </details>
