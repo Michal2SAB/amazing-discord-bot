@@ -3,6 +3,10 @@
 const { Client } = require('discord.js');
 const client = new Client();
 
+module.exports = {
+    client: client
+};
+
 const config = require('./config.json');
 const CMDHandler = require('./cmdhandler.js');
 
