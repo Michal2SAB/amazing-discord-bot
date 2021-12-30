@@ -17,12 +17,13 @@ const soon = require('./commands/soon.js');
 const colvert = require('./commands/colvert.js');
 const help = require('./commands/help.js');
 const remove = require('./commands/remove.js');
+const status = require('./commands/status.js');
 
 const config = require('./config.json');
 const prefix = config.prefix;
 
 const cmds = { btc, eth, luck, ethluck, calc, bnews, ask, mweather, mars, marsnews, apod, 
-              telescope, ytags, soon, colvert, help, remove}
+              telescope, ytags, soon, colvert, help, remove, status}
 
 module.exports = async function (msg) {
     if (msg.author.bot) return;
