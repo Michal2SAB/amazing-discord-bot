@@ -37,8 +37,8 @@ An amazing discord bot for many different things.
 
 <details>
   <summary>6. !telescope</summary>
-  
   - Get the latest news about the new James Webb telescope about to launch to space.
+  - Optional "info" command argument will show the telescope's current location, time left, speed etc. !telescope info
 </details>
 
 <details>
