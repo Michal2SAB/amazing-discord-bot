@@ -15,10 +15,10 @@ module.exports = async function (msg, arg) {
             await page.goto(url, { waitUntil: 'networkidle0' });
 
             const timeElapsed = await page.$eval("#launchElapsedTime", te => te.innerText);
-            const distanceFrom = await page.$eval("#milesEarth", sp => sp.innerText + " mi");
-            const distanceTo = await page.$eval("#milesToL2", sp => sp.innerText + " mi");
+            const distanceFrom = await page.$eval("#kmsEarth", sp => sp.innerText + " km");
+            const distanceTo = await page.$eval("#kmsToL2", sp => sp.innerText + " km");
             const completed = await page.$eval("#percentageCompleted", sp => sp.innerText + "%");
-            const speed = await page.$eval("#speedMi", sp => sp.innerText + " mi/s");
+            const speed = await page.$eval("#speedKm", sp => sp.innerText + " km/s");
             const status = await page.$eval(".status > a", sp => sp.innerText);
             const description = await page.$eval(".description > p", sp => sp.innerText);
             
