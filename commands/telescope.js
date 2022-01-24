@@ -19,7 +19,6 @@ module.exports = async function (msg, arg) {
             const distanceTo = await page.$eval("#kmsToL2", sp => sp.innerText + " km");
             const completed = await page.$eval("#percentageCompleted", sp => sp.innerText + "%");
             const speed = await page.$eval("#speedKm", sp => sp.innerText + " km/s");
-            const status = await page.$eval(".status > a", sp => sp.innerText);
             const description = await page.$eval(".description > p", sp => sp.innerText);
             
             const nasaLogo = "https://github.com/Michal2SAB/DISCORD-NASA-BOT/blob/main/nlogo.png?raw=true";
@@ -34,8 +33,7 @@ module.exports = async function (msg, arg) {
             embed.addFields(
                 { name: 'Time Elapsed', value: timeElapsed, inline: true },
                 { name: 'Distance Completed', value: completed, inline: true},
-                { name: 'Status', value: status, inline: true},
-                { name: 'Distance From Earth', value: distanceFrom, inline: true},
+                { name: 'Distance From Earth', value: distanceFrom, inline: false},
                 { name: 'Distance to L2', value: distanceTo, inline: true },
                 { name: 'Cruising Speed', value: speed, inline: true },
             );
