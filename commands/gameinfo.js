@@ -7,6 +7,8 @@ const NameServer = {'2dc': '2-Dimensional Central', 'ptc': 'Paper Thin City (RP)
 'uofsa': 'U of SA / Sticktopia', 'mobius': 'Mobius Metropolis / Planar Outpost', 'eu': '{Europe} Amsterdam', 
 'cartesian': 'Cartesian Republic', 'squaresville': 'Squaresville (BoxHead)', 'lp': '{LABPASS} The SS Lineage'}
 
+const CustomMaps = {'V': '0', 'W': '1', 'X': '2', 'Y': '3', 'Z': '4'}
+
 module.exports = async function (msg, args) {
     if(args.length < 2) {
         msg.channel.send("Wrong command usage. It's !gameinfo {server} {game name}")
