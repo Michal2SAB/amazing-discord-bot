@@ -101,3 +101,25 @@ An amazing discord bot for many different things.
   - Easily remove background almost perfectly from almost any image out there.
   - Command example: !remove https://www.somesite/with/someimage.png
 </details>
+
+## Commands for stick arena
+<details>
+  <summary>1. !users</summary>
+  
+  - Check who's online in a specified server
+  - Command example: !users 2dc
+</details>
+
+<details>
+  <summary>2. !games</summary>
+  
+  - Check what games are opened and how much round time left in a specified server
+  - Command example: !games 2dc
+</details>
+
+<details>
+  <summary>3. !gameinfo</summary>
+  
+  - Get all the info you need about a game in a specified server (time left, game mode, map, amount of players & creator)
+  - Command example: !gameinfo 2dc ffa
+</details>
