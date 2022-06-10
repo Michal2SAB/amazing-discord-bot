@@ -46,17 +46,18 @@ module.exports = async function (msg, args) {
                     if (a.normalMaps.includes(myMap)) {
                         GameMap = a.Maps[myMap];
                     } else {
-                        GameMap = myMap;
+                        GameMap = await loadCustomMap(myMap, GameCreator);
                     }
                     GameMode = a.gameModes[gameData[3]];
-                }
-                const Discord = require('discord.js');
-                embed = new Discord.MessageEmbed();
-                embed.setColor('#24262B')
-                embed.setTitle(`. : : Game Info for '${game}' in ${server.toUpperCase()} : : .`)
-                embed.setDescription(`**Players:** ${players}\n**Time Left:** ${TimeLeft}\n**Map:** ${GameMap}\n**Mode:** ${GameMode}\n**Creator:** ${GameCreator}`);
+                    
+                    const Discord = require('discord.js');
+                    embed = new Discord.MessageEmbed();
+                    embed.setColor('#24262B')
+                    embed.setTitle(`. : : Game Info for '${game}' in ${server.toUpperCase()} : : .`)
+                    embed.setDescription(`**Players:** ${players}\n**Time Left:** ${TimeLeft}\n**Map:** ${GameMap}\n**Mode:** ${GameMode}\n**Creator:** ${GameCreator}`);
 
-                msg.channel.send(embed);
+                    msg.channel.send(embed);
+                }
             }
         }
     }
@@ -67,4 +68,43 @@ function calculate_time(seconds) {
     var secs = seconds - mins * 60;
 
     return `${mins}:${secs}`;
+}
+
+async function loadCustomMap(MapCode, gameCreator) {
+    const http = require('http');
+    const cheerio = require('cheerio');
+
+    let mapSlot = CustomMaps[MapCode];
+    APIURL = `http://api.xgenstudios.com/?method=xgen.stickarena.maps.get&username=${gameCreator}&slot_id=${mapSlot}`;
+
+    return promiseCustom(5000, (resolve, reject) => {
+        http.get(APIURL, function(res){
+            res.setEncoding('utf8');
+            res.on('data', function(chunk){
+                $ = cheerio.load(chunk);
+                let customMapName = $('name').text();
+                var mapSlotConvert = parseInt(mapSlot) + 1;
+                resolve(`${customMapName} (${gameCreator}, slot ${mapSlotConvert})`);
+            });
+        });
+    });
+}
+
+function promiseCustom(timeout, callback) {
+    return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => {
+            resolve("");
+        }, timeout);
+
+        callback(
+            (value) => {
+                clearTimeout(timer);
+                resolve(value);
+            },
+            (error) => {
+                clearTimeout(timer);
+                reject(error);
+            }
+        );
+    });
 }
