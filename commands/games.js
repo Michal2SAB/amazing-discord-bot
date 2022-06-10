@@ -25,7 +25,7 @@ module.exports = async function (msg, server) {
         var RoomList = [];
         var NewRoomList = [];
         let games = await a.sendPacket('01', true, 5000, '01');
-        if(games.startsWith("01_")) games = null;
+        if(games.startsWith("01_") || games === '01') games = null;
 
         if (a.banned) {
             console.log(BotUser + " is currently banned, use other bot.");
