@@ -27,26 +27,20 @@ module.exports = async function (msg, args) {
 
             await a.connectToServer(BotUser, BotPassword, BotServer, BotPort);
 
-            let gameData = await a.sendPacket('04' + game, true, 5000, '04');
-            let GameCreator = await a.sendPacket('06' + game + ';rc', true, 5000, '06')
-            GameCreator = GameCreator.slice(5);
-
-            var players = null;
-            var TimeLeft = null;
-            var GameMap = null;
-            var GameMode = null;
-
             if (a.banned) {
                 console.log(BotUser + " is currently banned, use other bot.");
             } else if (!a.incorrect) {
+                let gameData = await a.sendPacket('04' + game, true, 5000, '04');
+                
                 if(!gameData) {
                     msg.channel.send(`Game '${game}' doesn't exist in ${NameServer[server]}`);
                 } else {
-                    players = gameData[4] + "/6";
-
-                    TimeSeconds = gameData.slice(5);
-                    TimeLeft = calculate_time(TimeSeconds);
-
+                    let GameCreator = await a.sendPacket('06' + game + ';rc', true, 5000, '06')
+                    GameCreator = GameCreator.slice(5);
+                    
+                    let players = gameData[4] + "/6";
+                    let TimeSeconds = gameData.slice(5);
+                    let TimeLeft = calculate_time(TimeSeconds);
                     let myMap = gameData[2];
 
                     if (a.normalMaps.includes(myMap)) {
