@@ -1,4 +1,5 @@
 const sabot = require('../tools/sabot.js');
+const creator = require('../tools/create.js');
 
 const ServerNames = {'2dc': 'ballistick5.xgenstudios.com:1138', 'ptc': 'ballistick4.xgenstudios.com:1138', 'fli':  'ballistick1.xgenstudios.com:1138', 'uofsa':  'ballistick3.xgenstudios.com:1138',
 'eu':  'game08.xgenstudios.com:1138',  'mobius':  'ballistick2.xgenstudios.com:1138', 'cartesian':  'balistick1.xgenstudios.com:1139', 'squaresville': '45.32.193.38:1031', 'lp': 'ballistick6.xgenstudios.com:1138'}
@@ -14,8 +15,15 @@ module.exports = async function (msg, server) {
         let serverport = ServerNames[server[0]].split(":");
         let BotServer = serverport[0];
         let BotPort = serverport[1];
-        let BotUser = process.env.bot_user;
-        let BotPassword = process.env.bot_pass;
+        var BotUser = null;
+        var BotPassword = null;
+        var generated = false;
+        
+        while(!generated) {
+            BotUser = await creator.create_php()
+            BotPassword = BotUser;
+            if (BotUser != false) generated = true;
+        }
 
         const a = new sabot();
 
@@ -24,12 +32,13 @@ module.exports = async function (msg, server) {
         var OpenGames = null;
         var RoomList = [];
         var NewRoomList = [];
-        let games = await a.sendPacket('01', true, 5000, '01');
-        if(games.startsWith("01_") || games === '01') games = null;
 
         if (a.banned) {
             console.log(BotUser + " is currently banned, use other bot.");
         } else if (!a.incorrect) {
+            let games = await a.sendPacket('01', true, 5000, '01');
+            if(games.startsWith("01_") || games === '01') games = null;
+            
             if(!games) {
                 msg.channel.send(`There are currently no games in ${NameServer[server]}`);
             } else {
@@ -88,5 +97,6 @@ module.exports = async function (msg, server) {
                 msg.channel.send(embed);
             }
         }
+        delete a.socketConn.destroy();
     }
 }
