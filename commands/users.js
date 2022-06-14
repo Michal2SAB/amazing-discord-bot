@@ -72,6 +72,6 @@ module.exports = async function (msg, server) {
                 msg.channel.send(embed);
             }
         }
-        delete a.socketConn.destroy();
+        a.socketConn.destroy();
     }
 }
