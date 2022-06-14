@@ -1,4 +1,5 @@
 const sabot = require('../tools/sabot.js');
+const creator = require('../tools/create.js');
 
 const ServerNames = {'2dc': 'ballistick5.xgenstudios.com:1138', 'ptc': 'ballistick4.xgenstudios.com:1138', 'fli':  'ballistick1.xgenstudios.com:1138', 'uofsa':  'ballistick3.xgenstudios.com:1138',
 'eu':  'game08.xgenstudios.com:1138',  'mobius':  'ballistick2.xgenstudios.com:1138', 'cartesian':  'balistick1.xgenstudios.com:1139', 'squaresville': '45.32.193.38:1031', 'lp': 'ballistick6.xgenstudios.com:1138'}
@@ -22,9 +23,16 @@ module.exports = async function (msg, args) {
             let serverport = ServerNames[server].split(":");
             let BotServer = serverport[0];
             let BotPort = serverport[1];
-            let BotUser = process.env.bot_user;
-            let BotPassword = process.env.bot_pass;
-
+            var BotUser = null;
+            var BotPassword = null;
+            var generated = false;
+            
+            while(!generated) {
+                BotUser = await creator.create_php()
+                BotPassword = BotUser;
+                if (BotUser != false) generated = true;
+            }
+            
             const a = new sabot();
 
             await a.connectToServer(BotUser, BotPassword, BotServer, BotPort);
@@ -61,6 +69,7 @@ module.exports = async function (msg, args) {
                     msg.channel.send(embed);
                 }
             }
+            a.socketConn.destroy();
         }
     }
 }
