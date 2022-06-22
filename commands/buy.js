@@ -119,11 +119,11 @@ function verify(color1, color2) {
     } else if (!RGB1.some(nr => nr >= 128)) {
         return "The color code given for name color won't work. Atleast 1 out of the RED, GREEN or BLUE values has to be 128 or bigger."
     } else if (!RGB2.some(nr => nr >= 128)) {
-        return "The color code given for name color won't work. Atleast 1 out of the RED, GREEN or BLUE values has to be 128 or bigger."
+        return "The secondary color code won't work. Atleast 1 out of the RED, GREEN or BLUE values has to be 128 or bigger."
     } else if (RGB1.every(val => val === RGB1[0])) {
         return "The color code given for name color won't work. R, G and B values can't be all the same."
     } else if (RGB2.every(val => val === RGB2[0])) {
-        return "The color code given for name color won't work. R, G and B values can't be all the same."
+        return "The secondary color code won't work. R, G and B values can't be all the same."
     } else {
         return false
     }
