@@ -118,8 +118,36 @@ An amazing discord bot for many different things.
 </details>
 
 <details>
-  <summary>3. .buy</summary>
+  <summary>4. .buy</summary>
   
   - Buy any spinner with any allowed color code
   - Command example: .buy {user} {pass}
+</details>
+
+<details>
+  <summary>5. .create</summary>
+  
+  - Create any valid account for all XGen online games
+  - Command example: .create {user} {pass}
+</details>
+
+<details>
+  <summary>6. .verify</summary>
+  
+  - Verify XGen account
+  - Command example: .verify {user} {pass} {email}
+</details>
+
+<details>
+  <summary>7. .change</summary>
+  
+  - change password or name for XGen account
+  - Command example: .change {user} {old_pass} {new_pass} or .change name {old_user} {pass} {new_user}
+</details>
+
+<details>
+  <summary>8. .validate</summary>
+  
+  - Check if a stick arena color will appear with a stupid red glitch in lobby
+  - Command example: .validate {color}
 </details>
