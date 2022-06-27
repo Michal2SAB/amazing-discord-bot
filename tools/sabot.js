@@ -77,9 +77,19 @@ class SABot {
                             if(!OneData.startsWith(required)){
                                 //pass
                             } else {
-                                resolve(OneData);
+                                if (required === 'U') {
+                                    if(dataReceived === '') {
+                                        dataReceived = OneData
+                                    } else {
+                                        dataReceived = dataReceived + this.NullByte + OneData
+                                    }
+                                } else {
+                                    resolved = true;
+                                    resolve(OneData);
+                                }
                             }
                         }
+                        if (resolved != true) resolve(dataReceived);
                     })
                 });
             }
