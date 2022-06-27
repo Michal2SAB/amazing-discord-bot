@@ -70,10 +70,12 @@ class SABot {
             this.socketConn.write(packetData + this.NullByte);
             if (response) {
                 return this.promiseCustom(timeout, (resolve, reject) => {
-                    this.socketConn.on('data', (data) => {
+                    this.socketConn.on('data', async (data) => {
                         data = data.toString();
                         data = data.split(this.NullByte);
-                        for(let OneData of data) {
+                        var dataReceived = '';
+                        var resolved = false;
+                        for await (let OneData of data) {
                             if(!OneData.startsWith(required)){
                                 //pass
                             } else {
