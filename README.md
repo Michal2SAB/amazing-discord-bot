@@ -151,3 +151,10 @@ An amazing discord bot for many different things.
   - Check if a stick arena color will appear with a stupid red glitch in lobby
   - Command example: .validate {color}
 </details>
+
+<details>
+  <summary>9. .find</summary>
+  
+  - Search for user in all open servers
+  - Command example: .find {user}
+</details>
