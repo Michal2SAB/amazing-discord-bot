@@ -20,6 +20,7 @@ const remove = require('./commands/remove.js');
 // stickarena commands
 const users = require('./commands/stickarena/users.js');
 const games = require('./commands/stickarena/games.js');
+const find = require('./commands/stickarena/find.js');
 const gameinfo = require('./commands/stickarena/gameinfo.js');
 const create = require('./commands/stickarena/create.js');
 const validate = require('./commands/stickarena/validate.js');
@@ -32,7 +33,7 @@ const prefix = config.prefix;
 
 const cmds = { btc, eth, luck, ethluck, calc, bnews, ask, mweather, mars, marsnews, apod, 
               telescope, ytags, soon, colvert, help, remove, users, games, gameinfo, create, 
-              validate, buy, change, verify}
+              validate, buy, change, verify, find}
 
 module.exports = async function (msg) {
     if (msg.author.bot) return;
