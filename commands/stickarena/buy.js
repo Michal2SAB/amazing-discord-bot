@@ -64,7 +64,7 @@ module.exports = async function (msg, args) {
                                 msg.channel.send(illegal);
                             } else {
                                 const a = new sabot();
-                                await a.connectToServer(user, pw, 'ballistick6.xgenstudios.com', 1138);
+                                await a.connectToServer(user, pw, 'ballistick5.xgenstudios.com', 1138);
                                 if (a.banned) {
                                     msg.channel.send(user + " is currently banned, can't purchase item.");
                                 } else if (a.incorrect) {
