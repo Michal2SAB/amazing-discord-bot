@@ -15,7 +15,8 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "string-math": "^1.2.2",
-    "youtube-tags": "^1.0.0"
+    "youtube-tags": "^1.0.0",
+    "xml2json": "latest"
   },
   "devDependencies": {},
   "scripts": {
