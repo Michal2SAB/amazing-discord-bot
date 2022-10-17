@@ -32,7 +32,7 @@ const config = require('./config.json');
 const prefix = config.prefix;
 
 const cmds = { btc, eth, luck, ethluck, calc, bnews, ask, mweather, mars, marsnews, apod, 
-              telescope, ytags, soon, colvert, help, remove, users, games, gameinfo, create, 
+              telescope, ytags, colvert, help, remove, users, games, gameinfo, create, 
               validate, buy, change, verify, find}
 
 module.exports = async function (msg) {
